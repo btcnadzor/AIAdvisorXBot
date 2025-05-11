@@ -31,12 +31,12 @@ bot.on("text", async (ctx) => {
     });
 
     const data = await response.json();
-    await ctx.reply(data.reply || "⚠️ Пустой ответ от AI.");
+    await ctx.reply(data.reply || "⚠️ An empty response from AIAdvisorXBot.");
   } catch (err) {
     console.error(err);
-    await ctx.reply("❌ Ошибка при обращении к AI.");
+    await ctx.reply("❌ Error when accessing AIAdvisorXBot.");
   }
 });
 
 bot.launch();
-console.log("🤖 Telegram AI агент запущен");
+console.log("🤖 AIAdvisorXBot is running");
