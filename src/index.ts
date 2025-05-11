@@ -31,10 +31,10 @@ bot.on("text", async (ctx) => {
     });
 
     const data = await response.json();
-    await ctx.reply(data.reply || "⚠️ An empty response from AIAdvisorXBot.");
+    await ctx.reply(data.reply || "⚠️ Technical work is underway.");
   } catch (err) {
     console.error(err);
-    await ctx.reply("❌ Error when accessing AIAdvisorXBot.");
+    await ctx.reply("❌ Technical work is underway.");
   }
 });
 
