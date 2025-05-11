@@ -12,10 +12,16 @@ bot.on("text", async (ctx) => {
       telegram_id: ctx.from.id,
       telegram_username: ctx.from.username || null,
       first_name: ctx.from.first_name || null,
+      last_name: ctx.from.last_name || null,
       language_code: ctx.from.language_code || null,
       is_premium: ctx.from.is_premium || false,
-      twitter_id: null, // можно будет связать позже через профиль
-      text: ctx.message.text
+      chat_id: ctx.chat.id,
+      chat_type: ctx.chat.type,
+      message_id: ctx.message.message_id,
+      text: ctx.message.text || null,
+      timestamp: ctx.message.date || null,
+      twitter_id: null, // пока null, добавишь позже
+      wallet_address: null // тоже добавишь через Supabase/n8n позже
     };
 
     const response = await fetch(n8nWebhookUrl, {
